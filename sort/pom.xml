@@ -1,0 +1,12 @@
+<project>
+  <parent>  	  
+	  <groupId>algo-practice</groupId>
+	  <artifactId>algo-practice</artifactId>
+	  <version>1</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>algo-practice</groupId>
+  <artifactId>sort</artifactId>
+  <version>1</version>
+  <packaging>jar</packaging>
+</project>
