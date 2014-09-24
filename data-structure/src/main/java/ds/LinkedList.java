@@ -1,5 +1,4 @@
 package ds;
-
 public class LinkedList<Item> implements List<Item>{
 	private Node first;
 	private Node last;
@@ -22,7 +21,17 @@ public class LinkedList<Item> implements List<Item>{
 		//increment the size
 		size++;
 	}
-
+	
+	public void add(int index, Item node){
+		Node temp = getNode(index);
+		Node newNode = new Node();
+		
+		newNode.next = temp;
+		newNode.previous = temp.previous;
+		temp.previous = newNode;
+		if(index == 0) first = newNode;
+	}
+	
 	private Node getNode(int index){
 		if(index >= size || index < 0) throw new IndexOutOfBoundsException("Index Should Be Between 0 ~ "+size);
 		if(index == 0) return first;
@@ -70,11 +79,7 @@ public class LinkedList<Item> implements List<Item>{
 		}		
 		size--;
 	}
-	
-	public void remove(Item i){
-		size--;
-	}
-	
+		
 	public int size(){
 		return size;
 	}
@@ -84,5 +89,4 @@ public class LinkedList<Item> implements List<Item>{
 		Node next;
 		Node previous;		
 	}
-
 }
